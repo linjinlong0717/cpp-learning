@@ -1,0 +1,65 @@
+类和对象
+C++面向对象的三大特性为：封装、继承、多态
+
+//C++认为万事万物皆为对象，对象上有其属性和行为
+例如：人可以作为对象，属性有姓名、年龄、身高、体重..., 行为有走、跑、跳、吃饭...
+车也可以作为对象，属性有轮胎、方向盘、车灯...行为有载人、放音乐、放空调...
+具有相同性质的对象，我们可以抽象称为类，人属于人类，车属于车类
+
+一、封装的意义
+1.将属性和行为作为一个整体，表现生活中的事物
+2.将属性和行为加以权限控制
+
+语法：class 类名{ 访问权限: 属性 / 行为 };
+//示例1：设计一个圆类
+const double PI = 3.14;
+class circle  //class代表设计一个类，类后面紧跟着的就是类名称
+{
+public:           //访问权限
+    int m_r;      //属性
+    double calculateZC() //行为(获取圆的周长)
+    {
+        return 2 * PI * m_r;
+    }
+};
+int main()
+{
+    //通过圆类，创建具体的圆(对象)
+    //实例化(通过一个类，创建一个对象的过程)
+    circle c1;
+    c1.m_r = 10; //给圆对象的属性进行赋值
+    cout << "圆的周长为：" << c1.calculateZC() << endl;
+    system("pause");
+    return 0;
+}
+
+//示例2：设计一个学生类
+class Student
+{
+public:                     //类中的属性和行为，我们统一称为成员
+    string m_Name;          //属性(成员属性/成员变量)
+    int m_Id;  //学号       //行为(成员函数/成员方法)
+    //行为(显示姓名和学号)
+    void showStudent()
+    {
+        cout << "姓名：" << m_Name << "学号：" << m_Id << endl;
+    }
+    void setName(string name)
+    {
+        m_Name = name;
+    }
+    void setId(int id)
+    {
+        m_Id = id;
+    }
+};
+int main()
+{
+    //创建一个具体学生，实例化对象
+    Student s1;
+    s1.setName("张三");
+    s1.setId(1);
+    s1.showStudent();
+    system("pause");
+    return 0;
+}
