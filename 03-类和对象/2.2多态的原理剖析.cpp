@@ -32,9 +32,8 @@ public:
 void test01()
 {
 	cout << "size of Animal = " << sizeof(Animal) << endl;   //若Animal类中不加virtual 输出1；加virtual 输出4(本质是一个虚函数指针，指向虚函数表，表内记录虚函数地址)；
-	Cat cat;
-	Animal& animal = cat;  //利用父类指针 实现多态
-	animal.Speak();        //动态多态的函数地址晚绑定 - 运行阶段确定函数地址
+	Animal* animal = new Cat;  //利用父类指针 实现多态
+	animal->Speak();        //动态多态的函数地址晚绑定 - 运行阶段确定函数地址
 }
 int main()
 {
