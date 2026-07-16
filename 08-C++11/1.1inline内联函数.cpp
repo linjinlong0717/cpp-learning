@@ -25,3 +25,5 @@ int main()
 	cout << ret << endl;
 	return 0;
 }
+
+三、限制：函数体不能复杂(循环、递归、大量分支不可用inline)
