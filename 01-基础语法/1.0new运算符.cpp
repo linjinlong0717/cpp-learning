@@ -40,3 +40,38 @@ int main()
 	system("pause");
 	return 0;
 }
+
+三、C语言动态内存管理malloc/calloc/realloc
+1.malloc（最常用）-- 分配原始内存
+函数原型：void * malloc(size_t size);
+作用：在堆上申请 size 个字节的连续内存空间
+返回值：成功返回指向这块内存的指针（void* ），失败返回 NULL
+特点：不会初始化内存，里面存的是垃圾值（上次使用留下的数据）
+//eg: int* p = (int*)malloc(10*sizeof(int));
+
+2.calloc(带初始化的malloc) -- 分配并清零
+//eg:int* p = (int*)calloc(10,sizeof(int));
+
+3.realloc(伸缩内存) -- 扩大或缩小已有空间
+//eg: 
+int main()
+{
+	//申请 100 个int
+	int* p = (int*)malloc(100 * sizeof(int));
+	if (p == NULL) return -1;
+
+	//缩容到 10 个int
+	int* tmp = (int*)realloc(p, 10 * sizeof(int));
+	if (tmp == NULL)
+	{
+		printf("缩容失败\n");
+		free(p);
+		p = NULL;
+		return -1;  //一般return非零代表失败
+	}
+	p = tmp;
+	printf("缩容成功，现在只能安全使用 p[0] ~ p[9]\n");
+	free(p);
+	p = NULL;
+	return 0;
+}
