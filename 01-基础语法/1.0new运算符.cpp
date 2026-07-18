@@ -58,11 +58,11 @@ int main()
 {
 	//申请 100 个int
 	int* p = (int*)malloc(100 * sizeof(int));
-	if (p == NULL) return -1;
+	if (NULL==p) return -1;         //注意：NULL 写在左边要是少写一个=，可以报错
 
 	//缩容到 10 个int
 	int* tmp = (int*)realloc(p, 10 * sizeof(int));
-	if (tmp == NULL)
+	if (NULL==tmp)
 	{
 		printf("缩容失败\n");
 		free(p);
