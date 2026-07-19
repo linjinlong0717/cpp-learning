@@ -41,7 +41,7 @@ int main()
 	return 0;
 }
 
-三、C语言动态内存管理malloc/calloc/realloc
+三、C语言动态内存管理malloc/calloc/realloc  //要加#include<stdlib.h> 头文件
 1.malloc（最常用）-- 分配原始内存
 函数原型：void * malloc(size_t size);
 作用：在堆上申请 size 个字节的连续内存空间
