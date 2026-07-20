@@ -1,4 +1,4 @@
-类模板对象做函数参数
+ 类模板对象做函数参数
 一、共三种传入方式：
 1.指定的类型  --直接显示对象的数据类型
 2.参数模板化  --将对象中的参数变为模板进行传递
@@ -54,7 +54,7 @@ void printPerson3(T& p)
 void test03()
 {
 	Person<string, int>p("唐僧", 30);
-	printPerson(p);
+	printPerson3(p);
 }
 int main()
 {
