@@ -11,13 +11,12 @@ string类内部封装了很多成员方法
 例如：查找find，拷贝copy，删除delete，替换replace，插入insert
 string管理char * 所分配的内存，不用担心复制越界和取值越界等，由类内部进行负责
 
-
 二、string构造函数
 构造函数原型：
-·string();                 //创建一个空的字符串 例如：string str;
-string(const char* s);      //使用字符串s初始化
+·string();                  //创建一个空的字符串 例如：string str;
+·string(const char* s);     //使用字符串s初始化
 ·string(const string& str); //使用一个string对象初始化另一个string对象
-·string(int n, char c);    //使用n个字符c初始化
+·string(int n, char c);     //使用n个字符c初始化
 
 三、代码演示：
 #include<iostream>
