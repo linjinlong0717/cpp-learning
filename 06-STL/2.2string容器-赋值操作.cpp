@@ -26,7 +26,7 @@ void test01()
 	str3 = 'a';
 	cout << "str3 = " << str3 << endl;
 
-	string str4;
+	string str4;                           //string str4.assign ("hello C++");  Óï·¨´íÎó
 	str4.assign("hello C++");
 	cout << "str4 = " << str4 << endl;
 
