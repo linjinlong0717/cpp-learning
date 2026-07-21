@@ -3,7 +3,7 @@ string子串
 ·从字符串中获取想要的子串
 
 函数原型：
-·string substr(int pos = 0, int n = npos) const; //返回由pos开始的 n个字符 成的字符串
+·string substr(int pos = 0, int n = npos) const; //返回由pos开始的 n个字符 组成的字符串(注意：n的含义)
 
 //代码演示：
 void test01()
