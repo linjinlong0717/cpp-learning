@@ -2,7 +2,7 @@ vector插入和删除
 函数原型：
 ·push_back(ele);                    //尾部插入元素ele
 ·pop_back();                        //删除最后一个元素
-·insert(const_iterator, pos, ele);  //迭代器指向位置pos 插入元素ele
+·insert(const_iterator pos, ele);  //迭代器指向位置pos 插入元素ele
 ·insert(const_iterator pos, int count, ele); //迭代器指向位置pos插入 count个元素ele
 ·erase(const_iterator pos);         //删除迭代器所指向的元素
 ·erase(const_iterator start,const_iterator end);//删除迭代器从start到end之间的元素
