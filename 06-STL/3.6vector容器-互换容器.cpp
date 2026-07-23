@@ -48,7 +48,7 @@ void test02()
 	cout << "v的大小为：" << v.size() << endl;     //3
 
 	//巧用swap可以收缩内存空间
-	vector<int>(v).swap(v);
+	vector<int>(v).swap(v); //这里的vector<int>(v)是匿名对象,（capacity == size）
 	cout << "v的容量为：" << v.capacity() << endl; //3
 	cout << "v的大小为：" << v.size() << endl;     //3
 }
