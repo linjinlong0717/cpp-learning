@@ -54,6 +54,16 @@ public:
 		return ptr[a];
 	}
 
+	T* begin () const
+	{ 
+		return ptr; 
+	}
+
+	T* end ()const
+	{
+		return ptr + size;
+	}
+
 	//·µ»ØÊ×ÔªËØ
 	T& myfront()
 	{
