@@ -44,3 +44,10 @@ int main()
 	test01();
 	return 0;
 }
+
+//补充：二维vector的初始化
+vector<vector<int>> v(numRows);   // 创建 numRows 行，每行都是空的（size=0）
+for (int i = 0; i < numRows; i++) 
+{
+	v[i].resize(i + 1);            // 用 resize表示这一行有 i+1 个元素
+}
