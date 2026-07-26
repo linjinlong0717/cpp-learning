@@ -1,48 +1,72 @@
 #include<iostream>
 #include<cstring>
 using namespace std;
-//构造、析构、拷贝构造、拷贝赋值
-class Mystring
+class my_string
 {
-public:
+private:
 	char* str;
 	int len;
-	Mystring(const char* s = "")
+public:
+	//构造函数
+	my_string(const char* s="") //包含默认构造
 	{
-		this->len = strlen(s);
-		str = new char[(this->len) + 1];  //要包含'\0'
+		len = strlen(s);
+		str = new char[len + 1];//+1留给'\0'
 		strcpy(str, s);
-		cout << "构造函数：" << str << endl;
 	}
 
-	Mystring(const Mystring& other)
+	//拷贝构造
+	my_string(const my_string& s)
 	{
-		this->len = other.len;
-		str = new char[(this->len) + 1];
-		strcpy(str, other.str);
-		cout << "拷贝构造：" << str << endl;
-	}
-
-	Mystring& operator=(const Mystring& s)
-	{
-		if (this == &s) return *this;
-		delete[] this->str;
 		this->len = s.len;
-		this->str = new char[len + 1];
+		this->str = new char[this->len+1];
 		strcpy(str, s.str);
-		cout << "赋值运算符：" << str << endl;
+	}
+
+	//获取C风格字符串
+	const char* mystr()const
+	{
+		return str;
+	}
+
+	//获取长度
+	int size()const
+	{
+		return len;
+	}
+
+	//重载[]运算符
+	char& operator[](int pos)
+	{
+		return str[pos];
+	}
+
+	//重载=运算符
+	my_string& operator=(const my_string& other)
+	{
+		if (this == &other) return *this;
+		delete[]str;
+	    this->len = other.len;
+		this->str = new char[len + 1];
+		strcpy(str, other.str);
 		return *this;
 	}
 
-	~Mystring()
+	//析构函数
+	~my_string()
 	{
-		cout << "析构：" << str << endl;
-		delete[] str;
-		cout << "析构函数：" << endl;
+		delete[]str;
+		str = nullptr;
+		len = 0;
 	}
 };
+//重载<<运算符   写成全局函数
+ostream& operator<<(ostream& os, const my_string& s)
+{
+	os << s.mystr();
+	return os;
+}
 int main()
 {
-
 	return 0;
 }
