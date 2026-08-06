@@ -125,3 +125,6 @@ public:
 		else return false;
 	}
 };
+
+//vector的正向迭代器里面的ptr可以直接++，所以不需要额外再定义一个类
+//而vector的反向迭代器里面的current++的规则是反向的，所以需要额外再定义一个类
