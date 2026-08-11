@@ -4,6 +4,7 @@
 #include<vector>
 using namespace std;
 
+//priority_queue<元素类型, 底层容器, 比较仿函数>
 template<class T,class Container = vector<T>,class Compare = less<T>> 
 class my_priority_queue
 {
