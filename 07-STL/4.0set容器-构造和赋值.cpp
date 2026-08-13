@@ -1,4 +1,4 @@
-set/multiset 容器   //要加头文件 #include<set>
+set/multiset 容器   //头文件都是 #include<set>
 一、set基本概念
 ·所有元素都会在插入时自动被 排序
 
