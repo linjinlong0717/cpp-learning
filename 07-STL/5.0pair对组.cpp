@@ -14,6 +14,7 @@ int main()
 
 	//2.使用make_pair函数(自动推导类型，常用)
 	auto p2 = make_pair(20, "World");
+	//也可以用于容器中，eg:  v.push_back(make_pair(10,20));
 
 	//3.C++11 列表初始化(简洁)
 	pair<int, double>p3 = { 30,3.14 };
