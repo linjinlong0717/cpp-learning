@@ -13,7 +13,7 @@
 2.ifstream : 读文件
 3.fstream : 读写文件
 
-二、写文件
+二、写文件(从 程序 到 文件)
 步骤：
 1.包含头文件
 #include<fstream>
